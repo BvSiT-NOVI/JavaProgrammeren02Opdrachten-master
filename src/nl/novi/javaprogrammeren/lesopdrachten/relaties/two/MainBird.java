@@ -1,5 +1,7 @@
 package nl.novi.javaprogrammeren.lesopdrachten.relaties.two;
 
+import java.util.Random;
+
 public class MainBird {
 
     /*
@@ -24,8 +26,13 @@ public class MainBird {
      */
 
     public static void main(String[] args) {
-
+        BirdOwner birdOwner1=new BirdOwner("Jan Hoekstra","man");
+        Random random=new Random();
+        for (int i=1;i<=20;i++){
+            String species = (random.nextBoolean())?"mannetje":"vrouwtje";
+            birdOwner1.addBird(new Bird("Duif"+i,species,"00000"+i));
+        }
+        System.out.println(birdOwner1.toString());
+        System.out.println((birdOwner1.chooseRandomBirds(10)));
     }
-
-
 }
