@@ -24,6 +24,33 @@ public class MainCar {
 
      */
     public static void main(String[] args) {
+        Car car = new Car("ABCD","Peugeot 206",10000);
+        CarDealer carDealer = new CarDealer("Jansen","Hoofdstraat 10","Amsterdam");
+        carDealer.addCar(car);
+        //Volgende auto wordt niet toegevoegd vanwege niet uniek kenteken
+        Car car2 = new Car("ABCD","Volkswagen",10000);
+
+        System.out.println(carDealer.toString());
+
+        CarOwner carOwner = new CarOwner("Piet","man");
+
+        System.out.println("Poging om auto te leveren aan "+carOwner.getName());
+        carDealer.changeOwner(car,carOwner);
+
+        System.out.println(carDealer.toString());
+        System.out.println(carOwner.toString());
+
+        carOwner.setLeeftijd(18);
+        System.out.println("Piet is nu "+carOwner.getLeeftijd()+ " jaar oud.");
+
+        System.out.println("Poging om auto te leveren aan "+carOwner.getName());
+        carDealer.changeOwner(car,carOwner);
+
+        System.out.println(carDealer.toString());
+        System.out.println(carOwner.toString());
+
+
+
 
     }
 }
